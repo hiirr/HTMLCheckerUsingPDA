@@ -63,8 +63,6 @@ q9 > X q2 eps
 q9 > Y q2 eps
 q10 /title A q9 eps
 q10 /script B q9 eps
-
-//BODY TAGS
 q4 link A q11 B
 q4 script A q11 C
 q4 h1 A q11 D
@@ -83,7 +81,6 @@ q4 button A q11 O
 q4 form A q11 P
 q4 input A q11 Q
 q4 table A q11 R
-
 q11 id= B p1 1B
 q11 class= B p1 1B
 q11 style= B p1 1B
@@ -141,8 +138,6 @@ q11 id= R p1 1R
 q11 class= R p1 1R
 q11 style= R p1 1R
 p1 any 1 q11 eps
-
-//HANDLING LINK TAG
 q11 rel= B q12 1B
 q12 any 1 q13 eps
 q13 id= B p1 2B
@@ -151,8 +146,6 @@ q13 style= B p1 2B
 q13 href= B p1 2B
 p1 any 2 q13 eps
 q13 > B q4 eps
-
-//HANDLING IMG TAG
 q11 src= N q13 1N
 q13 any 1 q14 eps
 q14 id= N p1 3N
@@ -161,26 +154,21 @@ q14 style= N p1 3N
 q14 alt= N p1 3N
 p1 any 3 q14 eps
 q14 > N q4 eps
-
-//HANDLING SOME VOID TAGS
 q11 > K q4 eps
 q11 > Q q4 eps
-
-//HANDLING SCRIPT TAG
 q11 > C q15 1
 q15 any 1 q15 1
 q15 < 1 q15 2
 q15 /script 2 q15 3
 q15 > 3 q4 eps
-
-//HANDLING P, H1-H6
 q11 > D q16 D
 q11 > E q16 E
 q11 > F q16 F
 q11 > G q16 G
 q11 > H q16 H
 q11 > I q16 I
-q11 J I q16 J
+q11 > J q16 J
+q11 > M q16 M
 q16 any D q16 D
 q16 any E q16 E
 q16 any F q16 F
@@ -188,6 +176,7 @@ q16 any G q16 G
 q16 any H q16 H
 q16 any I q16 I
 q16 any J q16 J
+q16 any M q16 M
 q16 < D q17 D
 q16 < E q17 E
 q16 < F q17 F
@@ -195,6 +184,7 @@ q16 < G q17 G
 q16 < H q17 H
 q16 < I q17 I
 q16 < J q17 J
+q16 < M q17 M
 q17 /h1 D q17 A
 q17 /h2 E q17 A
 q17 /h3 F q17 A
@@ -202,8 +192,8 @@ q17 /h4 G q17 A
 q17 /h5 H q17 A
 q17 /h6 I q17 A
 q17 /p J q17 A
+q17 /a M q17 A
 q17 > A q4 eps
-
 q17 em D r0 1D
 q17 b D r0 2D
 q17 abbr D r0 3D
@@ -239,7 +229,11 @@ q17 b J r0 2J
 q17 abbr J r0 3J
 q17 strong J r0 4J
 q17 small J r0 5J
-
+q17 em M r0 1M
+q17 b M r0 2M
+q17 abbr M r0 3M
+q17 strong M r0 4M
+q17 small M r0 5M
 r0 > 1 r1 1
 r0 > 2 r1 2
 r0 > 3 r1 3
@@ -267,5 +261,10 @@ r2 > G q16 G
 r2 > H q16 H
 r2 > I q16 I
 r2 > J q16 J
-
-
+r2 > M q16 M
+q11 type= Q p2 1Q
+p2 "text", 1 q11 eps
+p2 "password" 1 q11 eps
+p2 "email" 1 q11 eps
+p2 "number" 1 q11 eps
+p2 "checkbox" 1 q11 eps
