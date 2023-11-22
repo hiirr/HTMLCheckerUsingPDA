@@ -55,7 +55,7 @@ q7 < X q10 A
 q7 < Y q10 B
 q7 any X q7 X
 q7 any Y q7 Y
-q8 "a" 4 q9 eps
+q8 any 4 q9 eps
 q9 id= E p0 5E
 q9 class= E p0 5E
 q9 style= E p0 5E
@@ -369,3 +369,12 @@ q4 /div A q22 eps
 q11 > L q4 L
 q22 > L q4 eps
 q4 < L q4 AL
+q4 any L q4 L
+q4 em A r0 1A
+q4 b A r0 2A
+q4 abbr A r0 3A
+q4 strong A r0 4A
+q4 small A r0 5A
+r2 > A r3 eps
+r3 any L q4 L
+r3 < L q4 AL
