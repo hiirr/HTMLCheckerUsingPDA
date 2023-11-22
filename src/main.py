@@ -7,35 +7,42 @@ current_state = ""
 accept_state = ""
 stack = []
 inp = []
+line_counter = 1
 
 def check_html():
     global stack
     global current_state
     global inp
+    global line_counter
     print(current_state)
     print(stack)
-    found = False
-    for rule in rules[current_state]:
-        if stack[-1] == rule[1]:
-            if inp[0] == rule[0] or (rule[0] == "any" and inp[0] != "<" and inp[0] != ">" and inp[0] != "--"):
-                found = True
-                break
-    print(rule)
-    if found:
-        stack.pop()
-        new_stack = []
-        for symbol in rule[2]:
-            new_stack.append(symbol)
-        while len(new_stack)>0:
-            s = new_stack.pop()
-            stack.append(s)
-        stack = list(filter(None,stack))
-        current_state = rule[3]
-        if (len(inp) > 1):
-            inp = inp[1:]
-            check_html()
-        else:
-            inp = []
+    if inp[0]=="/":
+        line_counter+=1
+        inp = inp[1:]
+        check_html()
+    else:
+        found = False
+        for rule in rules[current_state]:
+            if stack[-1] == rule[1]:
+                if inp[0] == rule[0] or (rule[0] == "any" and inp[0] != "<" and inp[0] != ">" and inp[0] != "--"):
+                    found = True
+                    break
+        print(rule)
+        if found:
+            stack.pop()
+            new_stack = []
+            for symbol in rule[2]:
+                new_stack.append(symbol)
+            while len(new_stack)>0:
+                s = new_stack.pop()
+                stack.append(s)
+            stack = list(filter(None,stack))
+            current_state = rule[3]
+            if (len(inp) > 1):
+                inp = inp[1:]
+                check_html()
+            else:
+                inp = []
 
 def get_pda():
     global start_state
@@ -111,7 +118,7 @@ f = open(file_path, "r")
 string = ""
 for line in f:
     line = line.strip()
-    string += line + " "
+    string += line + " / "
 f.close()
 get_input(string)
 print(inp)
@@ -122,3 +129,8 @@ if current_state == accept_state and len(inp) == 0:
     print("Accepted")
 else:
     print("Syntax Error")
+    print("There is fault in line: ", line_counter)
+    f = open(file_path, "r")
+    for i in range(0, line_counter-1):
+        f.readline()
+    print(f.readline())
