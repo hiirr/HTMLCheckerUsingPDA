@@ -55,7 +55,7 @@ q7 < X q10 A
 q7 < Y q10 B
 q7 any X q7 X
 q7 any Y q7 Y
-q8 "a" 4 q9 eps
+q8 any 4 q9 eps
 q9 id= E p0 5E
 q9 class= E p0 5E
 q9 style= E p0 5E
