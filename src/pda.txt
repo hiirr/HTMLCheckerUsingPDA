@@ -268,3 +268,34 @@ p2 "password" 1 q11 eps
 p2 "email" 1 q11 eps
 p2 "number" 1 q11 eps
 p2 "checkbox" 1 q11 eps
+
+q11 type= O p2 3O
+q11 > O q16 O
+p2 "submit" 3 q11 eps
+p2 "reset" 3 q11 eps
+p2 "button" 3 q11 eps
+q16 < O q17 O
+q17 > A q4 eps
+q17 em O r0 1O
+q17 b O r0 2O
+q17 abbr O r0 3O
+q17 strong O r0 4O
+q17 small O r0 5O
+r0 > 1 r1 1
+r0 > 2 r1 2
+r0 > 3 r1 3
+r0 > 4 r1 4
+r0 > 5 r1 5
+r1 < 1 r2 A
+r1 < 2 r2 B
+r1 < 3 r2 C
+r1 < 4 r2 D
+r1 < 5 r2 3
+r2 > O q16 O
+
+q11 method= P p2 2P
+q11 > P q16 P
+p2 "GET" 2 q11 eps
+p2 "POST" 2 q11 eps
+q16 < P q17 P
+q17 > A q4 eps
