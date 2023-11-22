@@ -35,9 +35,9 @@ q2 id= B p0 32
 q2 class= B p0 3B
 q2 style= B p0 3B
 p0 any 3 q2 eps
-q2 title B q6 A
+q2 title A q6 B
 q2 link A q6 C
-q2 script C q6 D
+q2 script A q6 D
 q6 id= B p0 4B
 q6 class= B p0 4B
 q6 style= B p0 4B
@@ -53,14 +53,16 @@ q6 > B q7 X
 q6 > D q7 Y
 q7 < X q10 A
 q7 < Y q10 B
+q7 any X q7 X
+q7 any Y q7 Y
 q8 "a" 4 q9 eps
 q9 id= E p0 5E
 q9 class= E p0 5E
 q9 style= E p0 5E
 q9 any 5 q9 eps
 q9 > E q2 eps
-q9 > X q2 eps
-q9 > Y q2 eps
+q9 > X q2 X
+q9 > Y q2 Y
 q10 /title A q9 eps
 q10 /script B q9 eps
 q4 link A q11 B
@@ -268,7 +270,6 @@ p2 "password" 1 q11 eps
 p2 "email" 1 q11 eps
 p2 "number" 1 q11 eps
 p2 "checkbox" 1 q11 eps
-
 q11 type= O p2 3O
 q11 > O q16 O
 p2 "submit" 3 q11 eps
@@ -304,7 +305,6 @@ r2 /b B r2 eps
 r2 /abbr C r2 eps
 r2 /strong D r2 eps
 r2 /small E r2 eps
-
 q11 method= P p2 2P
 q11 > P q16 P
 p2 "GET" 2 q11 eps
@@ -313,7 +313,6 @@ q16 < P q17 P
 q16 any P q16 P
 q17 /form P q17 A
 q17 > A q4 eps
-
 q11 > R q16 R
 q16 < R q17 R
 q17 /table R q4 A
@@ -366,7 +365,6 @@ r2 /strong D r2 eps
 r2 /small E r2 eps
 r2 > 1 q20 1
 r2 > 2 q20 2
-
 q4 /div A q22 eps
 q11 > L q4 L
 q22 > L q4 eps
