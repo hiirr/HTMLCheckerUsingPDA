@@ -17,7 +17,7 @@ def check_html():
     found = False
     for rule in rules[current_state]:
         if stack[-1] == rule[1]:
-            if inp[0] == rule[0] or (rule[0] == "any" and inp[0] != "<" and inp[0] != ">"):
+            if inp[0] == rule[0] or (rule[0] == "any" and inp[0] != "<" and inp[0] != ">" and inp[0] != "--"):
                 found = True
                 break
     print(rule)
