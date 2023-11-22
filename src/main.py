@@ -16,7 +16,7 @@ def check_html():
     global line_counter
     print(current_state)
     print(stack)
-    if inp[0]=="/":
+    if inp[0]=="/" and len(inp) > 1:
         line_counter+=1
         inp = inp[1:]
         check_html()
@@ -97,6 +97,8 @@ def get_input(string):
                     inp.append(word)
                 word = ""
     inp = list(filter(None,inp))
+    if inp[-1] == "/":
+        inp.pop()
 
 get_pda()
 current_state = start_state
