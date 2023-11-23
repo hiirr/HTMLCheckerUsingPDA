@@ -1,6 +1,6 @@
 f q0 q1 q2 q3 q4 q5 q6 q7 q8 q9 q10 q11 q12 q13 q14 q15 q16 q17 q18 q19 q20 q21 p0 p1 p2 r0 r1 r2 s0 s1 s2 s3 s4 s5 ss6 s7 s8 s9 s10 s11 s12 s13 s14 s15 s16 s17 s18 s19 s20 s21
-< > html /html head /head body /body any id= class= style= title /title link script /script rel= "a" h1 /h1 h2 /h2 h3 /h3 h4 /h4 h5 /h5 h6 /h6 p /p br hr div a /a img button form input table /table td /td tr /tr th /th href= src= alt= action= em /em b /b abbr /abbr strong /strong small /small type= "text" "password" "email" "number" "checkbox" "submit" "reset" "button" method= "GET" "POST" div /div -- !--
-Z X A B C D E F G H I J K L M N O P Q R S T 1 2 3 4 5
+< > html /html head /head body /body any id= class= style= title /title link script /script rel= "a" h1 /h1 h2 /h2 h3 /h3 h4 /h4 h5 /h5 h6 /h6 p /p br hr div /div  a /a img button form input table /table td /td tr /tr th /th href= src= alt= action= em /em b /b abbr /abbr strong /strong small /small type= "text" "password" "email" "number" "checkbox" "submit" "reset" "button" method= "GET" "POST" -- !--
+Z X Y A B C D E F G H I J K L M N O P Q R S T 1 2 3 4 5
 q0 
 Z 
 f
@@ -399,17 +399,17 @@ s2 any S s2 S
 s2 -- S s2 eps
 s2 > A q7 X
 s2 > B q7 Y
-q17 !-- D s0 SD
-q17 !-- E s0 SE
-q17 !-- F s0 SF
-q17 !-- G s0 SG
-q17 !-- H s0 SH
-q17 !-- I s0 SI
-q17 !-- J s0 SJ
-q17 !-- M s0 SM
-q17 !-- P s0 SP
-q17 !-- R s0 SR
-q17 !-- O s0 SO
+q17 !-- D s3 SD
+q17 !-- E s3 SE
+q17 !-- F s3 SF
+q17 !-- G s3 SG
+q17 !-- H s3 SH
+q17 !-- I s3 SI
+q17 !-- J s3 SJ
+q17 !-- M s3 SM
+q17 !-- P s3 SP
+q17 !-- R s3 SR
+q17 !-- O s3 SO
 s3 any S s3 S
 s3 -- S s3 T
 s3 > T q16 eps
