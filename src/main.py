@@ -14,8 +14,6 @@ def check_html():
     global current_state
     global inp
     global line_counter
-    print(current_state)
-    print(stack)
     if inp[0]=="/" and len(inp) > 1:
         line_counter+=1
         inp = inp[1:]
@@ -27,7 +25,6 @@ def check_html():
                 if inp[0] == rule[0] or (rule[0] == "any" and inp[0] != "<" and inp[0] != ">" and inp[0] != "--"):
                     found = True
                     break
-        print(rule)
         if found:
             stack.pop()
             new_stack = []
@@ -123,10 +120,7 @@ for line in f:
     string += line + " / "
 f.close()
 get_input(string)
-print(inp)
 check_html()
-print(current_state)
-print(inp)
 if current_state == accept_state and len(inp) == 0:
     print("Accepted")
 else:
