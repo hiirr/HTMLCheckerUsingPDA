@@ -75,16 +75,17 @@ def get_input(string):
     global inp
     word = ""
     inQuotes = False
+    inComment = False
     for c in string:
-        if c == " " and not inQuotes:
+        if c == " " and not inQuotes and not inComment:
             inp.append(word)
             word = ""
         else:
-            if c == "<" or c==">":
+            if (c == "<" or c==">") and not inComment:
                 inp.append(word)
                 word = ""
             word += c
-            if word == "<" or word == ">":
+            if (word == "<" or word == ">") and not inComment:
                 inp.append(word)
                 word = ""
             elif word[-2:] == "=\"":
@@ -97,9 +98,11 @@ def get_input(string):
                     inp.append(word)
                 word = ""
             elif word == "!--":
+                inComment = True
                 inp.append(word)
                 word = ""
             elif word[-2:] == "--":
+                inComment = False
                 inp.append(word[:-2])
                 inp.append(word[-2:])
                 word = ""
@@ -143,4 +146,5 @@ else:
     for i in range(0, line_counter-1):
         f.readline()
     print(f.readline())
-    print(inp[0], "doesn't meet the corresponding rule.")
+    if (len(inp) > 0):
+        print(inp[0], "doesn't meet the corresponding rule.")
