@@ -430,3 +430,13 @@ s7 > B r1 2
 s7 > C r1 3 
 s7 > D r1 4 
 s7 > E r1 5 
+q11 method= P p2 2P
+p2 "GET" 2 q11 eps
+p2 "POST" 2 q11 eps
+q11 > P q4 P
+r2 > A r3 eps
+r3 any P q4 P
+q4 /form A q17 eps
+q17 > P q4 eps
+q4 any P q4 P
+q4 < P q4 AP

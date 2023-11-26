@@ -104,7 +104,7 @@ get_pda()
 current_state = start_state
 stack.append(start_stack)
 
-file = input("Tuliskan nama file yang akan di cek: ")
+file = input("\nTuliskan nama file yang akan di cek: ")
 file_path = "../test/" + file
 if (file[-5:] != ".html"):
     file_path += ".html"
