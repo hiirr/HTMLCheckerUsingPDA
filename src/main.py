@@ -96,6 +96,13 @@ def get_input(string):
                 if len(word) > 2:
                     inp.append(word)
                 word = ""
+            elif word == "!--":
+                inp.append(word)
+                word = ""
+            elif word[-2:] == "--":
+                inp.append(word[:-2])
+                inp.append(word[-2:])
+                word = ""
     inp = list(filter(None,inp))
     if inp[-1] == "/":
         inp.pop()
@@ -112,7 +119,7 @@ if (file[-5:] != ".html"):
 while not os.path.exists(file_path):
     print("File tidak ditemukan. Silahkan input ulang.")
     file = input("Tuliskan nama file yang akan di cek: ")
-    file_path = "./test/" + file
+    file_path = "../test/" + file
     if (file[-5:] != ".html"):
         file_path += ".html"
 
