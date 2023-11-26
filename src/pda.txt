@@ -340,7 +340,7 @@ q2 !-- A s10 SA
 q3 !-- A s11 SA
 q4 !-- A s12 SA
 q5 !-- A s13 SA
-q9 !-- B s14 SB
+q19 !-- C s14 SC
 s8 any S s8 S
 s8 -- S s8 T
 s9 any S s9 S
