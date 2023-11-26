@@ -416,3 +416,12 @@ q4 /form A q17 eps
 q17 > P q4 eps
 q4 any P q4 P
 q4 < P q4 AP
+f < Z s4 AZ
+s4 !-- A s5 SA
+s5 any S s5 S
+s5 -- S s5 eps
+s5 > A f eps
+q15 !-- 2 s2 S2
+s2 any S s2 S
+s2 -- S s2 eps
+s2 > 2 q15 1
