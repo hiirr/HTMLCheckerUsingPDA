@@ -14,6 +14,8 @@ def check_html():
     global current_state
     global inp
     global line_counter
+    # print(current_state)
+    # print(stack)
     if inp[0]=="/" and len(inp) > 1:
         line_counter+=1
         inp = inp[1:]
@@ -25,6 +27,7 @@ def check_html():
                 if inp[0] == rule[0] or (rule[0] == "any" and inp[0] != "<" and inp[0] != ">" and inp[0] != "--"):
                     found = True
                     break
+        # print(rule)
         if found:
             stack.pop()
             new_stack = []
@@ -72,16 +75,17 @@ def get_input(string):
     global inp
     word = ""
     inQuotes = False
+    inComment = False
     for c in string:
-        if c == " " and not inQuotes:
+        if c == " " and not inQuotes and not inComment:
             inp.append(word)
             word = ""
         else:
-            if c == "<" or c==">":
+            if (c == "<" or c==">") and not inComment:
                 inp.append(word)
                 word = ""
             word += c
-            if word == "<" or word == ">":
+            if (word == "<" or word == ">") and not inComment:
                 inp.append(word)
                 word = ""
             elif word[-2:] == "=\"":
@@ -92,6 +96,15 @@ def get_input(string):
                 inQuotes = False
                 if len(word) > 2:
                     inp.append(word)
+                word = ""
+            elif word == "!--":
+                inComment = True
+                inp.append(word)
+                word = ""
+            elif word[-2:] == "--":
+                inComment = False
+                inp.append(word[:-2])
+                inp.append(word[-2:])
                 word = ""
     inp = list(filter(None,inp))
     if inp[-1] == "/":
@@ -109,7 +122,7 @@ if (file[-5:] != ".html"):
 while not os.path.exists(file_path):
     print("File tidak ditemukan. Silahkan input ulang.")
     file = input("Tuliskan nama file yang akan di cek: ")
-    file_path = "./test/" + file
+    file_path = "../test/" + file
     if (file[-5:] != ".html"):
         file_path += ".html"
 
@@ -120,7 +133,10 @@ for line in f:
     string += line + " / "
 f.close()
 get_input(string)
+# print(inp)
 check_html()
+# print(current_state)
+# print(inp)
 if current_state == accept_state and len(inp) == 0:
     print("Accepted")
 else:
@@ -130,3 +146,5 @@ else:
     for i in range(0, line_counter-1):
         f.readline()
     print(f.readline())
+    if (len(inp) > 0):
+        print(inp[0], "doesn't meet the corresponding rule.")
